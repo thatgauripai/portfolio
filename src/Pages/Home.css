@@ -1,113 +1,159 @@
-.home-container {
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+/* Home.css */
+
+.home {
+  background: linear-gradient(135deg, #3a0ca3, #7209b7);
+  color: #ffffff;
   min-height: 100vh;
+  padding: 3rem 2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 40px;
+  justify-content: center;
 }
 
-.home-card {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  text-align: center;
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
 }
 
-.home-card h1 {
-  color: #1e3a8a;
-  margin-bottom: 10px;
+.hero-text {
+  flex: 1;
+  padding: 1rem 2rem;
+  text-align: left;
 }
 
-.home-card h3,
-.home-card h4 {
-  color: #334155;
-  margin: 5px 0;
+.welcome {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #e0e0e0;
 }
 
-.home-card p {
-  margin: 20px 0;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #475569;
+.main-heading {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+.highlight {
+  color: #ffb703;
+}
+
+.role {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffd6ff;
+  min-height: 2rem;
+}
+
+.typing-text {
+  font-weight: 500;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid #64ffda;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #64ffda;
+  }
+}
+
+
+.description {
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  max-width: 500px;
+}
+
+.cta-buttons {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: #ffb703;
+  color: #000;
+}
+
+.btn.primary:hover {
+  background-color: #ffd166;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .social-icons {
-  margin-top: 15px;
+  margin-top: 1.5rem;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .social-icons a {
-  color: #1e3a8a;
-  transition: transform 0.2s ease;
+  color: #ffffff;
+  transition: color 0.3s;
 }
 
 .social-icons a:hover {
-  transform: scale(1.2);
-  color: #0f172a;
+  color: #ffb703;
 }
 
-.resume-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #1d4ed8;
-  color: white;
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.resume-button:hover {
-  background-color: #0f172a;
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ffb703;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* 👇 Add this at the bottom of your existing Home.css */
-
-.animated-title {
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color); /* Optional */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional */
   margin-bottom: 20px;
 }
 
-.name-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1e3a8a;
-  animation: fadeInDown 1s ease-in-out;
+.left-section h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: white; /* Or any solid color */
 }
-
-.subtitle {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #64748b;
-  animation: fadeInUp 1.3s ease-in-out;
-  margin-top: 5px;
-}
-
-/* Fade-in Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-

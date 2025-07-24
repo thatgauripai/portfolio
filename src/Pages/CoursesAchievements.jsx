@@ -1,97 +1,155 @@
 import "./CoursesAchievements.css";
+import { motion } from "framer-motion";
 
 export default function CoursesAchievements() {
   return (
     <div className="courses-container">
-      <h1 className="page-title" data-aos="fade-down">Courses & Achievements</h1>
+      <motion.h1 
+        className="page-title"
+        data-aos="fade-down"
+        initial={{ opacity: 0, y: -20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.6 }}
+      >
+        Courses & Achievements
+      </motion.h1>
 
-      {/* SKILLS */}
-      <section className="card" data-aos="fade-up">
-        <h2>Skills</h2>
-        <ul>
-          <li><strong>Languages:</strong> C, C++, Python, Java</li>
-          <li><strong>Tools/Tech:</strong> Git, VS Code, Linux, MySQL</li>
-          <li><strong>Concepts:</strong> Data Structures, OOP, DBMS, Operating Systems</li>
-          <li><strong>Frameworks/Libraries:</strong> React.js, Next.js, TailwindCSS, Bootstrap, JavaScript, NodeJS, Flutter, React Native, Node.js, Express.js</li>
-        </ul>
-      </section>
+      {/* SKILLS SECTION */}
+      
 
-      {/* CERTIFICATES */}
-      <section className="card" data-aos="fade-up">
-        <h2>Certificates</h2>
+      {/* CERTIFICATES SECTION */}
+      <SectionCard title="Certificates">
+        <CertificateCard
+          title="AWS Cloud Engineer"
+          duration="Aug 2024 – Mar 2025"
+          issuer="Issued by Amrita Viswa Vidyapeetham, Coimbatore"
+          description="This course provided hands-on experience with cloud computing concepts and AWS services like EC2, S3, Lambda, and CloudFormation. I learned how to design scalable, fault-tolerant architectures, manage cloud security, automate infrastructure using IaC, and monitor application performance using AWS-native tools."
+          image="/aws_certificate.jpg"
+          alt="AWS Certificate"
+        />
 
-        {/* AWS Certificate */}
-        <div className="cert-section" data-aos="fade-right">
-          <p>
-            <strong>AWS Cloud Engineer</strong> <br />
-            Aug 2024 – Mar 2025 <br />
-            <em>Issued by Amrita Viswa Vidyapeetham, Coimbatore</em>
-          </p>
-          <p>
-            This course provided hands-on experience with cloud computing concepts and AWS services like EC2, S3, Lambda, and CloudFormation. I learned how to design scalable, fault-tolerant architectures, manage cloud security, automate infrastructure using Infrastructure as Code (IaC), and monitor application performance using AWS-native tools. The certification helped me understand real-world cloud deployments and DevOps practices.
-          </p>
-          <div className="image-box">
-            <img
-              src="/aws_certificate.jpg"
-              alt="AWS Certificate"
-            />
-          </div>
-        </div>
+        <CertificateCard
+          title='AI Journey with PyTorch Workshop'
+          duration='March 2025'
+          issuer='Organized by IETE Amrita Student Forum'
+          description='Gained hands-on experience in deep learning using PyTorch, covering essential AI concepts, model development, training, and optimization techniques. Helped deepen my practical understanding of machine learning tools.'
+          image='/pytorch_certificate.jpg'
+          alt='PyTorch Workshop Certificate'
+          delay={100}
+        />
+      </SectionCard>
 
-        {/* PyTorch Certificate */}
-        <div className="cert-section" data-aos="fade-right" data-aos-delay="100">
-          <p>
-            <strong>AI Journey with PyTorch Workshop</strong> <br />
-            March 2025 <br />
-            <em>Organized by IETE Amrita Student Forum</em>
-          </p>
-          <p>
-            Participated in the <strong>"Torch it up – AI Journey with PyTorch"</strong> workshop organized by IETE Amrita Student Forum. Gained hands-on experience in deep learning using PyTorch, covering essential AI concepts, model development, training, and optimization techniques. The workshop helped deepen my practical understanding of machine learning tools.
-          </p>
-          <div className="image-box">
-            <img
-              src="/pytorch_certificate.jpg"
-              alt="PyTorch Workshop Certificate"
-            />
-          </div>
-        </div>
-      </section>
+      {/* HACKATHON SECTION */}
+      <SectionCard title="Hackathons">
+        <CertificateCard
+          title="Sustainovate'25 Hackathon"
+          duration="March 31, 2025"
+          issuer="Organized by NEXINTEL SYNERGY PVT LTD"
+          description="Participated as a solo developer in the Sustainovate'25 hackathon under the theme of 'fitness'. Designed and submitted MoodFit – a mental wellness platform built using Next.js and Tailwind CSS to promote mental health and emotional well-being."
+          image="/sustainovate_certificate.jpg"
+          alt="Sustainovate Hackathon Certificate"
+        />
+      </SectionCard>
 
-      {/* HACKATHONS */}
-      <section className="card" data-aos="fade-up">
-        <h2>Hackathons</h2>
+      {/* VOLUNTEER EXPERIENCE SECTION */}
+      <SectionCard title="Volunteer Experience">
         <p>
-          <strong>Sustainovate'25 Hackathon</strong> <br />
-          March 31, 2025 <br />
-          <em>Organized by NEXINTEL SYNERGY PVT LTD</em>
+          Participated in a meaningful <strong>Seedball Plantation Initiative</strong> focused on environmental conservation. I helped prepare seedballs by selecting and packing seeds into nutrient-rich soil, contributing to natural afforestation efforts.
         </p>
         <p>
-          Participated as a solo developer in the <strong>Sustainovate'25</strong> hackathon under the theme of "fitness". I designed and submitted the <strong>MoodFit</strong> project – a mental wellness platform that allows users to track their emotional well-being, engage in journaling, and access motivational content. The project was built using Next.js and Tailwind CSS, with an emphasis on self-care and mental health awareness through tech.
+          This experience helped me understand sustainable reforestation methods, and I look forward to more opportunities to create a positive impact.
         </p>
-        <div className="image-box">
-          <img
-            src="/sustainovate_certificate.jpg"
-            alt="Sustainovate Hackathon Certificate"
-          />
+        <div className="image-box" data-aos="zoom-in">
+          <img src="/voluteer_certificate.jpg" alt="Volunteer Certificate" />
         </div>
-      </section>
-
-      {/* VOLUNTEER EXPERIENCE */}
-      <section className="card" data-aos="fade-up">
-        <h2>Volunteer Experience</h2>
-        <p>
-          I had the opportunity to participate in a meaningful <strong>Seedball Plantation Initiative</strong> focused on environmental conservation. I prepared seedballs by carefully selecting and packing seeds into nutrient-rich soil. These were stored and later distributed by other volunteers to encourage natural afforestation.
-        </p>
-        <p>
-          This experience deepened my understanding of sustainable reforestation methods. Contributing to this initiative was a fulfilling experience, and I look forward to more opportunities to create a positive impact.
-        </p>
-        <div className="image-box">
-          <img
-            src="/voluteer_certificate.jpg"
-            alt="Volunteer Certificate"
-          />
-        </div>
-      </section>
+      </SectionCard>
     </div>
   );
 }
+
+// Section wrapper
+function SectionCard({ title, children }) {
+  return (
+    <section className="card" data-aos="fade-up">
+      <h2>{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+// Certificate/Experience entry
+function CertificateCard({ title, duration, issuer, description, image, alt, delay = 0 }) {
+  return (
+    <article className="cert-section" data-aos="fade-right" data-aos-delay={delay}>
+      <p>
+        <strong>{title}</strong> <br />
+        {duration} <br />
+        <em>{issuer}</em>
+      </p>
+      <p>{description}</p>
+      <motion.div 
+        className="image-box"
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <img src={image} alt={alt} />
+      </motion.div>
+    </article>
+  );
+}
+
+/* TECHNICAL SKILLS SECTION */
+<section className="card" data-aos="fade-up">
+  <h2>Technical Skills</h2>
+  <div className="skills-table">
+    {/* Languages */}
+    <div className="skill-row">
+      <div className="skill-label">Languages</div>
+      <div className="skill-bubbles">
+        <span className="bubble">C</span>
+        <span className="bubble">C++</span>
+        <span className="bubble"><img src="/icons/python.png" alt="Python" />Python</span>
+        <span className="bubble">Java</span>
+      </div>
+    </div>
+
+    {/* Tools/Tech */}
+    <div className="skill-row">
+      <div className="skill-label">Tools / Tech</div>
+      <div className="skill-bubbles">
+        <span className="bubble">Git</span>
+        <span className="bubble">VS Code</span>
+        <span className="bubble">Linux</span>
+        <span className="bubble">MySQL</span>
+      </div>
+    </div>
+
+    {/* Concepts */}
+    <div className="skill-row">
+      <div className="skill-label">Concepts</div>
+      <div className="skill-bubbles">
+        <span className="bubble">Data Structures</span>
+        <span className="bubble">OOP</span>
+        <span className="bubble">DBMS</span>
+        <span className="bubble">Operating Systems</span>
+      </div>
+    </div>
+
+    {/* Frameworks/Libraries */}
+    <div className="skill-row">
+      <div className="skill-label">Frameworks / Libraries</div>
+      <div className="skill-bubbles">
+        <span className="bubble">React.js</span>
+        <span className="bubble">Next.js</span>
+        <span className="bubble">TailwindCSS</span>
+        <span className="bubble">Bootstrap</span>
+        <span className="bubble">JavaScript</span>
+        <span className="bubble">NodeJS</span>
+        <span className="bubble">Flutter</span>
+        <span className="bubble">React Native</span>
+        <span className="bubble">Express.js</span>
+      </div>
+    </div>
+  </div>
+</section>

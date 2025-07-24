@@ -1,0 +1,128 @@
+/* Container styling */
+.contact-container {
+  background: linear-gradient(135deg, #3a0ca3, #7209b7);
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: white !important; /* Ensures it stays white even if something overrides it */
+}
+
+
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #e0e0e0;
+}
+
+/* Main content layout */
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+.contact-link {
+  color: #7209b7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #560bad;
+  text-decoration: underline;
+}
+
+/* Left and Right column */
+.contact-left,
+.contact-right {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Contact cards (left side) */
+.contact-card {
+  background: white;
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: #7209b7;
+  margin-bottom: 10px;
+}
+
+/* Contact form (right side) */
+.contact-form {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #7209b7;
+}
+
+/* Submit button */
+.contact-form button {
+  background-color: #7209b7;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #560bad;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+}

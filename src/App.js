@@ -1,35 +1,33 @@
 // App.js
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./Pages/Home";
-import Projects from "./Pages/Projects";
-import CoursesAchievements from "./Pages/CoursesAchievements";
-import PersonalHistory from "./Pages/PersonalHistory";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./index.css";
 
-// 🔥 AOS Imports
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from "react";
+import Main from "./Pages/Main";
+import AboutMe from "./Pages/AboutMe";
+import Skills from "./Pages/Skills"; // ✅ Skills added
+import Contact from "./Pages/Contact";
 
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation duration in ms
-      once: true      // animation happens only once per element
+      duration: 1000,
+      once: true,
     });
   }, []);
 
   return (
-    <BrowserRouter>
-      <Navbar />
+    <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/courses-achievements" element={<CoursesAchievements />} />
-        <Route path="/personal-history" element={<PersonalHistory />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/about" element={<AboutMe />} />
+        <Route path="/skills" element={<Skills />} /> {/* ✅ Route for Skills */}
+        <Route path="/contact" element={<Contact />} />
+        {/* Add more routes as needed */}
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

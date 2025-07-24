@@ -1,51 +1,72 @@
-.projects-container {
-  background: linear-gradient(to bottom right, #f0f9ff, #e0f7fa);
-  padding: 50px 20px;
+.projects {
+  background: linear-gradient(135deg, #3a0ca3, #7209b7);
+  color: #ffffff;
   min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .page-title {
   text-align: center;
   font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  color: #003f5c;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #ffffff;
 }
 
+.projects-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: white;
+}
+
+
 .project-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
+  color: #1a1a1a;
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 25px;
   margin: 20px auto;
   width: 90%;
   max-width: 800px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.6s ease forwards;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(0, 174, 255, 0.3);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  background-color: #f9f9f9;
 }
+
 
 .project-header {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 10px;
 }
 
 .project-icon {
   font-size: 1.8rem;
-  color: #0077b6;
+  color: #6a1b9a;
 }
 
 .project-card h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #023047;
+  color: #1a1a1a;
 }
 
 .project-card p {
@@ -69,7 +90,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #0077b6;
+  color: #4a00e0;
   font-weight: bold;
   text-decoration: none;
   margin-top: 10px;
@@ -77,8 +98,16 @@
 }
 
 .github-link:hover {
-  color: #00bcd4;
+  color: #8e2de2;
   transform: scale(1.05);
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Badge styles */
@@ -110,5 +139,5 @@
 }
 
 .dsa {
-  background-color: #1f2937; /* Dark gray for visibility */
+  background-color: #1f2937;
 }

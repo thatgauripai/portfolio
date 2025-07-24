@@ -1,5 +1,12 @@
 import "./Projects.css";
-import { FaGithub, FaBrain, FaMicrochip, FaCalendarAlt, FaTasks, FaCarCrash } from "react-icons/fa";
+import {
+  FaGithub,
+  FaBrain,
+  FaMicrochip,
+  FaCalendarAlt,
+  FaTasks,
+  FaCarCrash,
+} from "react-icons/fa";
 
 export default function Projects() {
   const projectList = [
@@ -35,8 +42,13 @@ export default function Projects() {
       icon: <FaTasks />,
       description:
         "Demonstrates task scheduling, inter-task communication, and synchronization using FreeRTOS on a microcontroller. Includes blinking LEDs for tasks, semaphores for shared resources, and message queues for data exchange.",
-      features: ["RTOS task scheduling", "Semaphores and message queues", "Embedded systems programming"],
-      github: "https://github.com/thatgauripai/Task-Management-FreeRTOS",
+      features: [
+        "RTOS task scheduling",
+        "Semaphores and message queues",
+        "Embedded systems programming",
+      ],
+      github:
+        "https://github.com/thatgauripai/Task-Management-FreeRTOS",
       badge: "freertos",
     },
     {
@@ -44,21 +56,25 @@ export default function Projects() {
       icon: <FaCarCrash />,
       description:
         "Developed a simulation model to optimize emergency vehicle routing using shortest path algorithms. The system dynamically reroutes traffic to ensure minimum delay for ambulances and fire trucks in urban scenarios.",
-      features: ["Shortest path algorithm", "Traffic rerouting logic", "Efficient response simulation"],
-      github: "https://github.com/thatgauripai/Emergency-Vehicle-Rooting",
+      features: [
+        "Shortest path algorithm",
+        "Traffic rerouting logic",
+        "Efficient response simulation",
+      ],
+      github:
+        "https://github.com/thatgauripai/Emergency-Vehicle-Rooting",
       badge: "dsa",
     },
   ];
 
   return (
-    <div className="projects-container">
-      <h1 className="page-title" data-aos="fade-up">My Projects</h1>
+    <div className="projects" id="projects">
+      <h1 className="projects-title" data-aos="fade-up">My Projects</h1>
       {projectList.map((project, index) => (
         <div
-          className="project-card"
+          className="project-card fade-up"
           key={index}
-          data-aos="fade-up"
-          data-aos-delay={index * 150}
+          style={{ animationDelay: `${index * 0.2}s` }}
         >
           <div className="project-header">
             <span className="project-icon">{project.icon}</span>

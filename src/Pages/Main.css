@@ -1,0 +1,10 @@
+/* Pages/Main.css */
+html {
+  scroll-behavior: smooth;
+}
+
+.main-container section {
+  scroll-margin-top: 80px;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
